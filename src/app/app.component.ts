@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'game-of-thrones-angular';
+  title = 'Game of Thrones App';
+
+  public isAuthenticated = false;
+
+  public logout(): void {
+    // todo
+  }
 }
