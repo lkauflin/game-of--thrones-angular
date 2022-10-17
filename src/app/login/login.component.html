@@ -5,18 +5,20 @@
         <mat-error *ngIf="!loginValid">
           The username and password were not recognized
         </mat-error>
-        <mat-form-field>
-          <input matInput placeholder="Email" [(ngModel)]="username" name="username" required>
-          <mat-error>
-            Please provide a valid email address
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
-          <mat-error>
-            Please provide a valid password
-          </mat-error>
-        </mat-form-field>
+        <div style="display:flex; flex-direction:column;">
+          <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="username" name="username" required>
+            <mat-error>
+              Please provide a valid email address
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+            <mat-error>
+              Please provide a valid password
+            </mat-error>
+          </mat-form-field>
+        </div>
         <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
       </form>
     </mat-card-content>

@@ -38,7 +38,7 @@ export class AuthService implements OnDestroy {
 
 
     private signInWithCredentials(username: string, password: string) {
-        if (username === "test@gmail.com" && password === "123456") {
+        if (username === "test@gmail.com" && password === "7891549") {
             this._authSub$.next(true);
             localStorage.setItem('key', "sessionKey");
             this._router.navigate(['resources']);

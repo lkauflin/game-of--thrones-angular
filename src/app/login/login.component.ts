@@ -10,8 +10,8 @@ import { filter, Subject, take, takeUntil } from 'rxjs';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   public loginValid = true;
-  public username = '';
-  public password = '';
+  public username = 'test@gmail.com';
+  public password = '7891549';
 
   private _destroySub$ = new Subject<void>();
   private readonly returnUrl: string;
