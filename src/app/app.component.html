@@ -1,7 +1,14 @@
 <mat-toolbar class="mat-toolbar" color="primary">
   <span>
-    <button mat-button routerLink="/">{{title}}</button>
+    <button mat-button routerLink="/">
+      <mat-icon>home</mat-icon>
+    </button>
   </span>
+  <div>
+    <button mat-button routerLink="/resources">
+      Game of Thrones resources
+    </button>
+  </div>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
     <button mat-button routerLink="/login" *ngIf="!isAuthenticated">
       <mat-icon>power_settings_new</mat-icon>
@@ -11,6 +18,7 @@
       <mat-icon>exit_to_app</mat-icon>
       Logout
     </button>
+
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
@@ -18,8 +26,9 @@
 <style>
   .mat-toolbar {
     display: flex;
-    flex-flow: row ;
+    flex-flow: row;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
+    padding: 0.5rem;
   }
 </style>
