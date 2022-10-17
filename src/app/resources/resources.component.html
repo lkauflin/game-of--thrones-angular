@@ -1,5 +1,47 @@
 <mat-card>
     <mat-card-content>
         <h2>resources works!</h2>
+        <h3>{{title}}</h3>
+        <button *ngIf="lastUrl" (click)="changeUrl(lastUrl)"> Back</button>
+        <div *ng>
+
+        </div>
+        <div *ngIf=initialPosts>
+            <div *ngFor="let item of initialPosts | keyvalue">
+                <div *ngIf="isUrl(item.value); else withoutbutton">
+                    <span style="font-weight: bold;">
+                        {{item.key}} </span>
+                    <button (click)="changeUrl(item.value)">
+                        {{item.value}}
+                    </button>
+                </div>
+                <ng-template #withoutbutton>
+                    <span style="font-weight: bold;">
+                        {{item.key}} </span>
+                        <span>
+                            {{item.value}}
+                        </span>
+                </ng-template>
+
+            </div>
+        </div>
+        <div *ngIf=posts>
+            <div *ngFor="let item of posts">
+                <div *ngFor="let o of item | keyvalue">
+                    <div *ngIf="o.key === 'name'">
+                        <span style="font-weight: bold;">
+                            {{o.value}}
+                        </span>
+                    </div>
+                    <div *ngIf="o.key === 'url'">
+                        <button (click)="changeUrl(o.value)">
+                            More Information
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </mat-card-content>
 </mat-card>
