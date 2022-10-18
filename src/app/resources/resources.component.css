@@ -1,0 +1,21 @@
+.back {
+    border: none;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    
+}
+
+.backButtons {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+.link {
+    text-decoration: underline;
+    color: blue;
+    margin: 0;
+    cursor: pointer;
+    padding-right: 0.25rem;
+}
