@@ -1,10 +1,13 @@
 <mat-card>
     <mat-card-content>
-        <h2>resources works!</h2>
-        <h3>{{title}}</h3>
-        <button *ngIf="lastUrl" (click)="changeUrl(lastUrl)"> Back</button>
-        <div *ng>
-
+        <h2>{{title |titlecase }}</h2>
+        <div class="backButtons">
+            <button *ngIf="lastUrl" (click)="changeUrl('https://anapioficeandfire.com/api')" class="back">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <button *ngIf="lastUrl" (click)="changeUrl(lastUrl)" class="back">
+                <mat-icon>keyboard_backspace</mat-icon>
+            </button>
         </div>
         <div *ngIf=initialPosts>
             <div *ngFor="let item of initialPosts | keyvalue">
@@ -18,9 +21,19 @@
                 <ng-template #withoutbutton>
                     <span style="font-weight: bold;">
                         {{item.key}} </span>
+                    <div *ngIf="isArray(item.value); else notArray" >
+                        <span *ngFor="let element of item.value" >
+                            <a (click)="changeUrl(element)" *ngIf="isUrl(element);" class="link">
+                                {{getLastPartOfUrl(element)}}
+                            </a>
+                        </span>
+                    </div>
+                    <ng-template #notArray>
                         <span>
                             {{item.value}}
                         </span>
+                    </ng-template>
+
                 </ng-template>
 
             </div>
@@ -41,7 +54,5 @@
                 </div>
             </div>
         </div>
-
-
     </mat-card-content>
 </mat-card>
